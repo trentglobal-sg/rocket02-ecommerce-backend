@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
   res.json({ message: "Welcome to the API" });
 });
 
+const productRoutes = require('./routes/products');
+app.use('/products', productRoutes);
+
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
