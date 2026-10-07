@@ -15,7 +15,11 @@ app.get('/', (req, res) => {
 });
 
 const productRoutes = require('./routes/products');
-app.use('/products', productRoutes);
+const userRoutes = require('./routes/user');
+const cartRouter = require('./routes/cart')
+app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/cart', cartRouter)
 
 
 // Start the server
